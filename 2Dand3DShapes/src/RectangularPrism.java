@@ -1,21 +1,24 @@
-public class RectangularPrism extends implements Prism3D {
+public class RectangularPrism extends Rectangle implements Prism3D {
+    public double depth;
+
     @Override
     public double getDepth() {
-        return 0;
+        return depth;
     }
 
     @Override
-    public double setDepth() {
-        return 0;
+    public void setDepth(double depth) {
+        this.depth = depth;
     }
 
     @Override
-    public double getSurfaceArea() {
-        return 2 * (length * );
+    /** returns the surface area of the prism */
+    public double getArea() {
+        return 2 * ((length * width) + (length * depth) + (width * depth));
     }
 
     @Override
     public double getVolume() {
-        return 0;
+        return length * width * depth;
     }
 }
